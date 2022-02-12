@@ -10,16 +10,12 @@ def setup_custom_logger(name):
     handler = logging.StreamHandler()
     handler.setFormatter(formatter)
 
-    file_handler = logging.FileHandler("cigk.log")
     file_handler_custom = logging.FileHandler(f"{name}.log")
-    file_handler.setFormatter(formatter)
     file_handler_custom.setFormatter(formatter)
-    file_handler.setLevel(logging.DEBUG)
     file_handler_custom.setLevel(logging.DEBUG)
 
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)
     logger.addHandler(handler)
-    logger.addHandler(file_handler)
     logger.addHandler(file_handler_custom)
     return logger
