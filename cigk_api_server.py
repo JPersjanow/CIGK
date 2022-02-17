@@ -1,4 +1,3 @@
-import imp
 from flask import Flask, Blueprint
 from flask_cors import CORS
 from api import api, logger
